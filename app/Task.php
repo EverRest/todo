@@ -30,4 +30,14 @@ class Task extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    /**
+    * Get name of the current user
+    */
+    public function getName($u_id)
+    {
+        $user = User::where('id','=', $u_id)->first();
+        
+        return $user->name;
+    }
 }

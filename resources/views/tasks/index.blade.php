@@ -24,6 +24,7 @@
                                 <input type="text" name="task" id="task-task" class="form-control" value="{{ old('task') }}">
                             </div>
                         </div>
+
                         <!-- Status -->
                         <div class="form-group">
                             <label for="status" class="col-sm-3 control-label">Status</label>
@@ -70,7 +71,7 @@
                             <tbody>
                                 @foreach ($tasks as $task)
                                     <tr>
-                                        <td class="table-text"><div>{{ $task->user_id }}</div></td>
+                                        <td class="table-text"><div>{{ $task->getName($task->user_id) }}</div></td>
 
                                         <td class="table-text"><div>{{ $task->task }}</div></td>
                                         
