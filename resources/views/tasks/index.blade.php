@@ -77,7 +77,7 @@
                                         
                                         <td class="table-text"><div>{{ $task->status }}</div></td>
                                         
-                                        <td class="table-text"><div>{{ $task->created_at }}</div></td>
+                                        <td class="table-text"><div>{{ $task->created_at->format('d-m-Y') }}</div></td>
 
                                         <!-- Task Delete Button -->
                                         <td>
@@ -87,6 +87,17 @@
 
                                                 <button type="submit" id="delete-task-{{ $task->id }}" class="btn btn-danger">
                                                     <i class="fa fa-btn fa-trash"></i>Delete
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <!-- Task Update Button -->
+                                        <td>
+                                            <form action="{{url('task/' . $task->id)}}" method="POST">
+                                                {{ csrf_field() }}
+                                                {{ method_field('PATCH') }} 
+
+                                                <button type="submit" id="update-task-{{ $task->id }}" class="btn btn-info update">
+                                                    <i class="fa fa-pencil"></i> Update
                                                 </button>
                                             </form>
                                         </td>

@@ -19,4 +19,15 @@ class TaskRepository
                     ->orderBy('created_at', 'asc')
                     ->get();
     }
+   /**
+     * Get one of the task by id
+     *
+     * @param  $id
+     * @return Collection
+     */
+    public function taskById($id)
+    {
+        return Task::where('id', $id)
+                    ->get();
+    }
 }

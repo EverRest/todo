@@ -37,7 +37,7 @@ class Task extends Model
     public function getName($u_id)
     {
         $user = User::where('id','=', $u_id)->first();
-        
         return $user->name;
     }
+
 }
